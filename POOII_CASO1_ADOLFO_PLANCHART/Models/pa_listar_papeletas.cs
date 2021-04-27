@@ -9,7 +9,7 @@ namespace POOII_CASO1_ADOLFO_PLANCHART.Models
     {
         public int NROPAP { get; set; }
         public string PAPFECHA { get; set; }
-        public string NOMPROP { get; set; }
+        public string NOMPRO { get; set; }
         public string NROPLA { get; set; }
         public string CODINF { get; set; }
     }

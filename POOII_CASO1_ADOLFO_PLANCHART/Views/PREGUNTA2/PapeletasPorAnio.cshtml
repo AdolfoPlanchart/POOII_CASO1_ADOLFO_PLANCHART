@@ -1,14 +1,30 @@
 ﻿@model IEnumerable<POOII_CASO1_ADOLFO_PLANCHART.Models.pa_listar_papeletas>
 
 @{
-    ViewBag.Title = "PapeletasPorAnio";
+    ViewBag.Title = "Papeletas por año";
 }
 
-<h2>PapeletasPorAnio</h2>
+<h2>Papeletas por año.</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+<p>
+    <b>Filtrar por año:</b>
+    <input type="text"
+           name="anio"
+           value="@ViewBag.ANIO"
+           class="form-control" />
+    <br />
+    <input type="submit"
+           class="btn btn-success btn-block"
+           value="Consultar" />
+</p>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -18,7 +34,7 @@
             @Html.DisplayNameFor(model => model.PAPFECHA)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NOMPROP)
+            @Html.DisplayNameFor(model => model.NOMPRO)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NROPLA)
@@ -38,18 +54,13 @@
             @Html.DisplayFor(modelItem => item.PAPFECHA)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NOMPROP)
+            @Html.DisplayFor(modelItem => item.NOMPRO)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NROPLA)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CODINF)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }
