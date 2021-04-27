@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label for="nomUsu">Nombre de Usuario</label>
+        <input type="text" class="form-control" id="usr" placeholder="Usuario" name="usr">
+    </div>
+    <div class="form-group">
+        <label for="psw">Contraseña</label>
+        <input type="password" class="form-control" id="psw" placeholder="Contraseña" name="psw">
+    </div>
+    <input type="submit" 
+           formmethod="post" 
+           class="btn btn-success btn-block"
+           value="Iniciar Sesion"/>
+    <p>@ViewBag.MENSAJE</p>
+}
