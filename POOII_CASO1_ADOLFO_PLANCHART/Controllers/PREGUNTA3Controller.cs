@@ -15,10 +15,7 @@ namespace POOII_CASO1_ADOLFO_PLANCHART.Controllers
         {
             var listado = pap_dao.Papeletas(anio, codpol);
 
-            if(ViewBag.ANIO != 0)
-            {
-                ViewBag.ANIO = anio;
-            }
+            ViewBag.ANIO = anio;
 
             ViewBag.POLICIAS = new SelectList(
                 pol_dao.Policias(),
