@@ -108,12 +108,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Papeletas_DAO.cs" />
+    <Compile Include="Controllers\Policias_DAO.cs" />
     <Compile Include="Controllers\PREGUNTA1Controller.cs" />
     <Compile Include="Controllers\PREGUNTA2Controller.cs" />
+    <Compile Include="Controllers\PREGUNTA3Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\pa_listar_papeletas.cs" />
+    <Compile Include="Models\pa_listar_policias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +136,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\PREGUNTA2\PapeletasPorAnio.cshtml" />
+    <Content Include="Views\PREGUNTA3\PapeletasPorAnioYPolicia.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

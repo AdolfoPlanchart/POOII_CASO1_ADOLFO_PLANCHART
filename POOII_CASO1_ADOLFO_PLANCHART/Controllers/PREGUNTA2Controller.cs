@@ -12,7 +12,8 @@ namespace POOII_CASO1_ADOLFO_PLANCHART.Controllers
         Papeletas_DAO pap_dao = new Papeletas_DAO();
         public ActionResult PapeletasPorAnio(int anio=0)
         {
-            var listado = pap_dao.PapeletasPorAnio(anio);
+            var listado = pap_dao.Papeletas(anio);
+            ViewBag.ANIO = anio;
             return View(listado);
         }
     }

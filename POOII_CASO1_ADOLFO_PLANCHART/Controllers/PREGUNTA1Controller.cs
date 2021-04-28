@@ -19,7 +19,7 @@ namespace POOII_CASO1_ADOLFO_PLANCHART.Controllers
         {
             if(usr == "CIBER" && psw == "T4CM2021")
             {
-                return RedirectToAction("PapeletasPorAnio");
+                return RedirectToAction("PapeletasPorAnio", "PREGUNTA2");
             }
             ViewBag.MENSAJE = "Error: Usuario y/ o Clave son incorrectos";
             return View();

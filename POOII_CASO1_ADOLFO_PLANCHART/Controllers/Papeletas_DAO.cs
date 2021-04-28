@@ -12,7 +12,7 @@ namespace POOII_CASO1_ADOLFO_PLANCHART.Controllers
     public class Papeletas_DAO
     {
         string cn_string = ConfigurationManager.ConnectionStrings["SQLServer"].ConnectionString;
-        public List<pa_listar_papeletas> PapeletasPorAnio(int anio)
+        public List<pa_listar_papeletas> Papeletas(int anio)
         {
             List<pa_listar_papeletas> lista = new List<pa_listar_papeletas>();
 
@@ -29,6 +29,37 @@ namespace POOII_CASO1_ADOLFO_PLANCHART.Controllers
             SqlDataReader dr = cmd.ExecuteReader();
 
             while(dr.Read())
+            {
+                lista.Add(new pa_listar_papeletas()
+                {
+                    NROPAP = dr.GetInt32(0),
+                    PAPFECHA = dr.GetDateTime(1).ToString(),
+                    NOMPRO = dr.GetString(2),
+                    NROPLA = dr.GetString(3),
+                    CODINF = dr.GetString(4)
+                });
+            }
+
+            return lista;
+        }
+        public List<pa_listar_papeletas> Papeletas(int anio, string codpol)
+        {
+            List<pa_listar_papeletas> lista = new List<pa_listar_papeletas>();
+
+            SqlConnection cn = new SqlConnection(cn_string);
+
+            cn.Open();
+
+            SqlCommand cmd = new SqlCommand("pa_listar_papeletasxanioxpolicia", cn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@anio", SqlDbType.Int).Value = anio;
+            cmd.Parameters.Add("@codpol", SqlDbType.Char, 5).Value = codpol;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
             {
                 lista.Add(new pa_listar_papeletas()
                 {
