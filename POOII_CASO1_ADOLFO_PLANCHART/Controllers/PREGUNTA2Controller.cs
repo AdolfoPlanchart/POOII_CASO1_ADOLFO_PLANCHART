@@ -10,7 +10,7 @@ namespace POOII_CASO1_ADOLFO_PLANCHART.Controllers
     {
         // GET: PREGUNTA2
         Papeletas_DAO pap_dao = new Papeletas_DAO();
-        public ActionResult PapeletasPorAnio(int anio=0)
+        public ActionResult PapeletasPorAnio(int anio = 0)
         {
             var listado = pap_dao.Papeletas(anio);
             ViewBag.ANIO = anio;

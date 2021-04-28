@@ -11,9 +11,9 @@ namespace POOII_CASO1_ADOLFO_PLANCHART.Controllers
         Papeletas_DAO pap_dao = new Papeletas_DAO();
         Policias_DAO pol_dao = new Policias_DAO();
         // GET: PREGUNTA3
-        public ActionResult PapeletasPorAnioYPolicia(int anio=0,string codpol="")
+        public ActionResult PapeletasPorAnioYPolicia(int anio,string codpol="")
         {
-            var listado = pap_dao.Papeletas(anio, codpol);
+            var listado = pap_dao.Papeletas(anio = 0, codpol);
 
             ViewBag.ANIO = anio;
 
